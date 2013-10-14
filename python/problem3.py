@@ -2,14 +2,14 @@ def problem3():
     """
     The prime factors of 13195 are 5, 7, 13 and 29.
 
-    What is the largest prime factor of the number 600851475143 ?
-
+    What is the largest prime factor of the number 600851475143?
     """
     n = 600851475143
     largest = -1
     # brute force
-    for x in range(int(n ** 0.5), n):
+    for x in range(1, int(n ** 0.5)):
         if n % x == 0 and is_prime(x):
+            print 'largest is now {0}'.format(x)
             largest = x
 
     print largest
@@ -17,10 +17,7 @@ def problem3():
 
 def is_prime(number):
     """
-    Check if `number` is prime.
-
-    :param number assumed to be an integer.
-
+    Check if `number` is prime. `number` is assumed to be an integer.
     """
     if number == 2:
         return True
@@ -28,6 +25,7 @@ def is_prime(number):
     if number <= 1 or number % 2 == 0:
         return False
 
+    # check to see if number has any odd factors
     for x in range(3, int(number ** 0.5) + 1, 2):
         if number % x == 0:
             return False
