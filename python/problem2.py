@@ -7,7 +7,6 @@ def problem2():
 
     By considering the terms in the Fibonacci sequence whose values do not
     exceed four million, find the sum of the even-valued terms.
-
     """
     seq = fib()
     x = seq.next()
@@ -23,12 +22,12 @@ def problem2():
 def fib():
     """
     Generator to get fib seq.
-
     """
     x, y = 0, 1
     while True:
         yield x
         x, y = y, x + y
+
 
 if __name__ == '__main__':
     problem2()
