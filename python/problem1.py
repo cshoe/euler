@@ -6,11 +6,14 @@ def problem1():
     Find the sum of all the multiples of 3 or 5 below 1000.
     """
     multiples = []
-    for x in xrange(0, 1000):
+    total_sum = 0
+    x = 3
+    while x < 1000:
         if x % 3 == 0 or x % 5 == 0:
-            multiples.append(x)
+            total_sum += x
+        x+=1;
 
-    print sum(multiples)
+    print total_sum
 
 if __name__ == '__main__':
     problem1()
