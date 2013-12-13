@@ -13,3 +13,13 @@ def is_prime(number):
         if number % x == 0:
             return False
     return True
+
+
+def fib():
+    """
+    Generator to get fib seq.
+    """
+    x, y = 0, 1
+    while True:
+        yield x
+        x, y = y, x + y
