@@ -1,4 +1,4 @@
-from utils import divisor_lister, triangle_numbers
+from utils import divisor_counter, triangle_numbers
 
 
 def problem12():
@@ -33,13 +33,12 @@ def problem12():
     But, in the interest of simplicity and assumption free code, we're going
     to brute force this.
     """
-    divisors = []
+    divisors = 0
     tri_generator = triangle_numbers()
-    while len(divisors) < 500:
+    while divisors < 500:
         tri_number = next(tri_generator)
-        divisors = divisor_lister(tri_number)
-        if len(divisors) > 100:
-            print tri_number, len(divisors)
+        divisors = divisor_counter(tri_number)
+        print tri_number, divisors
 
     return tri_number
 

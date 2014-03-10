@@ -58,3 +58,19 @@ def divisor_lister(num):
     divisors.append(num)
     divisors.sort()
     return divisors
+
+
+def divisor_counter(num):
+    """
+    Return a count of divisors for num.  Only works on positive, non-zero
+    numbers.
+    """
+    if num <= 0:
+        raise ValueError('num must be a positive, non-zero number')
+
+    divisors = 0
+    for possible_divisor in range(1, int(num**.5)):
+        if num % possible_divisor == 0:
+            divisors += 1
+
+    return divisors*2
