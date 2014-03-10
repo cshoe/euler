@@ -54,7 +54,6 @@ def problem11():
 
     What is the greatest product of four adjacent numbers in the same direction
     (up, down, left, right or diagonally) in the 20 x 20 grid.
-
     """
     # parse grid into a list of lists.
     grid = [map(int, row.split(' ')) for row in GRID.strip().split('\n')]
