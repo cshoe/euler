@@ -69,8 +69,14 @@ def divisor_counter(num):
         raise ValueError('num must be a positive, non-zero number')
 
     divisors = 0
-    for possible_divisor in range(1, int(num**.5)):
+    num_sq_rt = num ** .5
+    for possible_divisor in range(1, int(num_sq_rt)):
         if num % possible_divisor == 0:
             divisors += 1
 
+    divisors *= 2
+    # If num is a perfect square, we have to subtract one so we only count
+    # the square root once. i.e. if num is 16, we only want to count 4 once
+    if num_sq_rt.is_integer():
+        divisors -= 1
     return divisors*2
